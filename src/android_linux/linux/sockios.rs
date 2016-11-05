@@ -3,8 +3,8 @@
 
 
 use ::libc::c_ulong;
-use ::android_linux::uapi::asm_generic::ioctls::FIONREAD;
-use ::android_linux::uapi::asm_generic::ioctls::TIOCOUTQ;
+use ::android_linux::asm_generic::ioctls::FIONREAD;
+use ::android_linux::asm_generic::ioctls::TIOCOUTQ;
 
 
 pub const SIOCINQ: c_ulong =  FIONREAD;

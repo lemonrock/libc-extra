@@ -2,4 +2,9 @@
 // Copyright © 2016 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-pub mod uapi;
+// linux - probably doesn't belong in this crate
+pub mod asm_generic;
+pub mod linux;
+
+// libc
+pub mod net;

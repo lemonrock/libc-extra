@@ -2,18 +2,27 @@
 // Copyright © 2016 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-#![no_std]
+#![allow(non_camel_case_types)] 
 
-extern crate libc;
-#[allow(unused_extern_crates)] #[macro_use] extern crate cfg_if;
+use ::core::default::Default;
+use ::core::mem::transmute;
+use ::core::mem::zeroed;
+use ::libc::c_char;
+use ::libc::c_int;
+use ::libc::c_short;
+use ::libc::c_uchar;
+use ::libc::c_ulong;
+use ::libc::c_ushort;
+use ::libc::c_void;
+use ::libc::IF_NAMESIZE;
+use ::libc::sockaddr;
+use ::libc::socklen_t;
 
 
-use ::libc::FILE;
-
-
-include!("stdin.rs");
-include!("stdout.rs");
-include!("stderr.rs");
-
-#[cfg(any(target_os = "android", target_os = "linux"))] pub mod android_linux;
-#[cfg(any(target_os = "android", target_os = "linux"))] pub use android_linux::*;
+include!("cmsghdr.rs");
+include!("functions.rs");
+include!("iface.rs");
+include!("ifaddr.rs");
+include!("ifconf.rs");
+include!("ifmap.rs");
+include!("ifreq.rs");

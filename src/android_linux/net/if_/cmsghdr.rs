@@ -2,18 +2,20 @@
 // Copyright © 2016 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-#![no_std]
+#[repr(C)]
+#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
+pub struct cmsghdr
+{
+	pub cmsg_len: socklen_t,
+	pub __pad1: c_int,
+	pub cmsg_level: c_int,
+	pub cmsg_type: c_int,
+}
 
-extern crate libc;
-#[allow(unused_extern_crates)] #[macro_use] extern crate cfg_if;
-
-
-use ::libc::FILE;
-
-
-include!("stdin.rs");
-include!("stdout.rs");
-include!("stderr.rs");
-
-#[cfg(any(target_os = "android", target_os = "linux"))] pub mod android_linux;
-#[cfg(any(target_os = "android", target_os = "linux"))] pub use android_linux::*;
+impl Default for cmsghdr
+{
+	fn default() -> Self
+	{
+		unsafe { zeroed() }
+	}
+}

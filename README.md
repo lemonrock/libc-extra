@@ -5,7 +5,7 @@
 
 [![Clippy Linting Result](https://clippy.bashy.io/github/lemonrock/libc-extra/master/badge.svg?style=plastic)](https://clippy.bashy.io/github/lemonrock/libc-extra/master/log) [![](https://img.shields.io/badge/Code%20Style-rustfmt-brightgreen.svg?style=plastic)](https://github.com/rust-lang-nursery/rustfmt#configuring-rustfmt)
 
-[libc-extra] is a rust crate that supplies additional bits and bobs found in libc libraries that either hasn't been submitted to Rust's official libc yet, or has been rejected or requires too much work to integrate. Mostly it is intended that code in here should change frequently, and migration when something is officially accepted by the libc crate should be no more than changing `::libc_extra::` for `::libc::`.
+[libc-extra] is a rust crate that supplies additional bits and bobs found in libc libraries that either hasn't been submitted to Rust's official libc yet, or has been rejected or requires too much work to integrate. Some things in here are uncertain `asm_generic` and `linux` aren't reallty part of libc. Mostly it is intended that code in here should change frequently, and migration when something is officially accepted by the libc crate should require breaking change replacement of `::libc_extra::` for `::libc::`.
 
 
 ## Licensing

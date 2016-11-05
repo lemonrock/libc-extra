@@ -2,18 +2,4 @@
 // Copyright © 2016 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-#![no_std]
-
-extern crate libc;
-#[allow(unused_extern_crates)] #[macro_use] extern crate cfg_if;
-
-
-use ::libc::FILE;
-
-
-include!("stdin.rs");
-include!("stdout.rs");
-include!("stderr.rs");
-
-#[cfg(any(target_os = "android", target_os = "linux"))] pub mod android_linux;
-#[cfg(any(target_os = "android", target_os = "linux"))] pub use android_linux::*;
+pub mod if_;
