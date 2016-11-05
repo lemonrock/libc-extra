@@ -2,5 +2,10 @@
 // Copyright © 2016 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-pub mod ethtool;
-pub mod sockios;
+pub const WAKE_PHY: c_uchar = 1;
+pub const WAKE_UCAST: c_uchar = 2;
+pub const WAKE_MCAST: c_uchar = 4;
+pub const WAKE_BCAST: c_uchar = 8;
+pub const WAKE_ARP: c_uchar = 16;
+pub const WAKE_MAGIC: c_uchar = 32;
+pub const WAKE_MAGICSECURE: c_uchar = 64;

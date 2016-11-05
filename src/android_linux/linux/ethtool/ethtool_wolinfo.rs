@@ -2,5 +2,20 @@
 // Copyright © 2016 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-pub mod ethtool;
-pub mod sockios;
+#[repr(C)]
+#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
+pub struct ethtool_wolinfo
+{
+	pub cmd: u32,
+	pub supported: u32,
+	pub wolopts: u32,
+	pub sopass: [u8; 6],
+}
+
+impl Default for ethtool_wolinfo
+{
+	fn default() -> Self
+	{
+		unsafe { zeroed() }
+	}
+}

@@ -2,5 +2,9 @@
 // Copyright © 2016 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-pub mod ethtool;
-pub mod sockios;
+pub const ETHTOOL_FWVERS_LEN: size_t = 32;
+pub const ETHTOOL_BUSINFO_LEN: size_t = 32;
+pub const ETHTOOL_EROMVERS_LEN: size_t = 32;
+pub const ETH_GSTRING_LEN: size_t = 32;
+pub const SOPASS_MAX: size_t = 6;
+pub const ETHTOOL_FLASH_MAX_FILENAME: size_t = 128;

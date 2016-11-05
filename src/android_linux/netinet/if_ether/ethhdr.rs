@@ -2,5 +2,19 @@
 // Copyright © 2016 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-pub mod ethtool;
-pub mod sockios;
+#[repr(C)]
+#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
+pub struct ethhdr
+{
+    pub h_dest: [uint8_t; 6],
+    pub h_source: [uint8_t; 6],
+    pub h_proto: uint16_t,
+}
+
+impl Default for ethhdr
+{
+    fn default() -> Self
+	{
+		unsafe { zeroed() }
+	}
+}

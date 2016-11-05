@@ -2,5 +2,19 @@
 // Copyright © 2016 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-pub mod ethtool;
-pub mod sockios;
+#![allow(non_camel_case_types)] 
+
+use ::core::default::Default;
+use ::core::mem::zeroed;
+use ::libc::c_ushort;
+use ::libc::uint8_t;
+use ::libc::uint16_t;
+use ::libc::size_t;
+
+
+include!("constants/lengths.rs");
+include!("constants/ETH_P.EtherType.rs");
+include!("constants/ETH_P.FrameType.rs");
+include!("ethhdr.rs");
+// Needs arphdr
+// include!("ether_arp.rs");

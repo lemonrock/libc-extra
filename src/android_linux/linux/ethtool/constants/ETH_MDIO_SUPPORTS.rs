@@ -2,5 +2,5 @@
 // Copyright © 2016 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-pub mod ethtool;
-pub mod sockios;
+pub const ETH_MDIO_SUPPORTS_C22: c_uchar = 1;
+pub const ETH_MDIO_SUPPORTS_C45: c_uchar = 2;

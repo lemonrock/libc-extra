@@ -2,5 +2,27 @@
 // Copyright © 2016 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-pub mod ethtool;
-pub mod sockios;
+#[repr(C)]
+#[derive(Copy)]
+#[allow(missing_debug_implementations)]
+pub struct ethtool_rx_ntuple
+{
+	pub cmd: u32,
+	pub fs: ethtool_rx_ntuple_flow_spec,
+}
+
+impl Clone for ethtool_rx_ntuple
+{
+	fn clone(&self) -> Self
+	{
+		*self
+	}
+}
+
+impl Default for ethtool_rx_ntuple
+{
+	fn default() -> Self
+	{
+		unsafe { zeroed() }
+	}
+}
