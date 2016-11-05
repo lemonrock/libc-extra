@@ -1,3 +1,10 @@
+// This file is part of libc-extra. It is subject to the license terms in the COPYRIGHT file found in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT. No part of libc-extra, including this file, may be copied, modified, propagated, or distributed except according to the terms contained in the COPYRIGHT file.
+// Copyright © 2016 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
+
+
+use ::libc::c_uint;
+use ::libc::c_ulong;
+
 
 pub const TCGETS: c_ulong = 0x5401;
 pub const TCSETS: c_ulong = 0x5402;
@@ -26,7 +33,7 @@ pub const TIOCMSET: c_ulong = 0x5418;
 pub const TIOCGSOFTCAR: c_ulong = 0x5419;
 pub const TIOCSSOFTCAR: c_ulong = 0x541A;
 pub const FIONREAD: c_ulong = 0x541B;
-pub const TIOCINQ FIONREAD;
+pub const TIOCINQ: c_ulong = FIONREAD;
 pub const TIOCLINUX: c_ulong = 0x541C;
 pub const TIOCCONS: c_ulong = 0x541D;
 pub const TIOCGSERIAL: c_ulong = 0x541E;
@@ -59,7 +66,6 @@ pub const TIOCGSID: c_ulong = 0x5429;
 
 cfg_if!
 {
-
 	if #[cfg(any(target_arch = "aarch64", target_arch = "arm", target_arch="powerpc", target_arch="powerpc64", target_arch = "s390x", target_arch = "x86", target_arch = "x86_64"))]
 	{
 		pub const TIOCSRS485: c_ulong = 0x542F;
