@@ -2,6 +2,14 @@
 // Copyright © 2016 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-pub mod capability;
-pub mod ethtool;
-pub mod sockios;
+pub const _LINUX_CAPABILITY_VERSION_1: c_uint = 429392688;
+pub const _LINUX_CAPABILITY_U32S_1: c_uchar = 1;
+
+pub const _LINUX_CAPABILITY_VERSION_2: c_uint = 537333798;
+pub const _LINUX_CAPABILITY_U32S_2: c_uchar = 2;
+
+pub const _LINUX_CAPABILITY_VERSION_3: c_uint = 537396514;
+pub const _LINUX_CAPABILITY_U32S_3: c_uchar = 2;
+
+pub const _LINUX_CAPABILITY_VERSION: c_uint = _LINUX_CAPABILITY_VERSION_1;
+pub const _LINUX_CAPABILITY_U32S: c_uchar = _LINUX_CAPABILITY_U32S_1;

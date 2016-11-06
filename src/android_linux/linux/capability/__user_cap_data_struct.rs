@@ -2,6 +2,19 @@
 // Copyright © 2016 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-pub mod capability;
-pub mod ethtool;
-pub mod sockios;
+#[repr(C)]
+#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
+pub struct __user_cap_data_struct
+{
+	pub effective: u32,
+	pub permitted: u32,
+	pub inheritable: u32,
+}
+
+impl Default for __user_cap_data_struct
+{
+	fn default() -> Self
+	{
+		unsafe { zeroed() }
+	}
+}

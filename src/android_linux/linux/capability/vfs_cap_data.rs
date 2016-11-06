@@ -2,6 +2,18 @@
 // Copyright © 2016 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-pub mod capability;
-pub mod ethtool;
-pub mod sockios;
+#[repr(C)]
+#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
+pub struct vfs_cap_data
+{
+	pub magic_etc: u32, // Always Little Endian
+	pub data: [Data; 2],
+}
+
+impl Default for vfs_cap_data
+{
+	fn default() -> Self
+	{
+		unsafe { zeroed() }
+	}
+}

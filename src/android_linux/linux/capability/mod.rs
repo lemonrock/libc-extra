@@ -2,6 +2,24 @@
 // Copyright © 2016 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-pub mod capability;
-pub mod ethtool;
-pub mod sockios;
+#![allow(non_camel_case_types)]
+
+use ::core::default::Default;
+use ::core::mem::zeroed;
+use ::libc::c_int;
+use ::libc::c_longlong;
+use ::libc::c_uchar;
+use ::libc::c_uint;
+use ::libc::size_t;
+
+
+include!("constants/_LINUX_CAPABILITY.rs");
+include!("constants/VFS_CAP.rs");
+include!("constants/CAP.rs");
+include!("task_struct.rs");
+include!("__user_cap_header_struct.rs");
+include!("cap_user_header_t.rs");
+include!("__user_cap_data_struct.rs");
+include!("cap_user_data_t.rs");
+include!("vfs_cap_data.rs");
+include!("Data.rs");
