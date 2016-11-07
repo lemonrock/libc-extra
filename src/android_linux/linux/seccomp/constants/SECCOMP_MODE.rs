@@ -2,7 +2,6 @@
 // Copyright © 2016 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-pub mod capability;
-pub mod ethtool;
-pub mod seccomp;
-pub mod sockios;
+pub const SECCOMP_MODE_DISABLED: c_ulong = 0;
+pub const SECCOMP_MODE_STRICT: c_ulong = 1;
+pub const SECCOMP_MODE_FILTER: c_ulong = 2;

@@ -2,7 +2,15 @@
 // Copyright © 2016 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-pub mod capability;
-pub mod ethtool;
-pub mod seccomp;
-pub mod sockios;
+use ::core::mem::zeroed;
+use ::libc::c_int;
+use ::libc::c_uchar;
+use ::libc::c_uint;
+use ::libc::c_ulong;
+
+
+include!("constants/SECCOMP_FILTER_FLAG.rs");
+include!("constants/SECCOMP_MODE.rs");
+include!("constants/SECCOMP_RET.rs");
+include!("constants/SECCOMP_SET_MODE.rs");
+include!("seccomp_data.rs");

@@ -34,6 +34,8 @@ pub const CAP_LEASE: c_uchar = 28;
 pub const CAP_AUDIT_WRITE: c_uchar = 29;
 pub const CAP_AUDIT_CONTROL: c_uchar = 30;
 pub const CAP_SETFCAP: c_uchar = 31;
+
+// All of these capabilities can not be represented in the capabilities set API
 pub const CAP_MAC_OVERRIDE: c_uchar = 32;
 pub const CAP_MAC_ADMIN: c_uchar = 33;
 pub const CAP_SYSLOG: c_uchar = 34;
