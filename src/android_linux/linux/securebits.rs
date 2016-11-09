@@ -3,14 +3,25 @@
 
 
 use ::libc::c_ulong;
+use ::libc::uint8_t;
 
+
+pub const SECURE_NOROOT: uint8_t = 0;
+pub const SECURE_NOROOT_LOCKED: uint8_t = 1;
+pub const SECURE_NO_SETUID_FIXUP: uint8_t = 2;
+pub const SECURE_NO_SETUID_FIXUP_LOCKED: uint8_t = 3;
+pub const SECURE_KEEP_CAPS: uint8_t = 4;
+pub const SECURE_KEEP_CAPS_LOCKED: uint8_t = 5;
+pub const SECURE_NO_CAP_AMBIENT_RAISE: uint8_t = 6;
+pub const SECURE_NO_CAP_AMBIENT_RAISE_LOCKED: uint8_t = 7;
 
 pub const SECUREBITS_DEFAULT: c_ulong = 0;
-pub const SECURE_NOROOT: c_ulong = 0;
-pub const SECURE_NOROOT_LOCKED: c_ulong = 1;
-pub const SECURE_NO_SETUID_FIXUP: c_ulong = 2;
-pub const SECURE_NO_SETUID_FIXUP_LOCKED: c_ulong = 3;
-pub const SECURE_KEEP_CAPS: c_ulong = 4;
-pub const SECURE_KEEP_CAPS_LOCKED: c_ulong = 5;
-pub const SECURE_NO_CAP_AMBIENT_RAISE: c_ulong = 6;
-pub const SECURE_NO_CAP_AMBIENT_RAISE_LOCKED: c_ulong = 7;
+
+pub const SECBIT_NOROOT: c_ulong = 1 << (SECURE_NOROOT as c_ulong);
+pub const SECBIT_NOROOT_LOCKED: c_ulong = 1 << (SECURE_NOROOT_LOCKED as c_ulong);
+pub const SECBIT_NO_SETUID_FIXUP: c_ulong = 1 << (SECURE_NO_SETUID_FIXUP as c_ulong);
+pub const SECBIT_NO_SETUID_FIXUP_LOCKED: c_ulong = 1 << (SECURE_NO_SETUID_FIXUP_LOCKED as c_ulong);
+pub const SECBIT_KEEP_CAPS: c_ulong = 1 << (SECURE_KEEP_CAPS as c_ulong);
+pub const SECBIT_KEEP_CAPS_LOCKED: c_ulong = 1 << (SECURE_KEEP_CAPS_LOCKED as c_ulong);
+pub const SECBIT_NO_CAP_AMBIENT_RAISE: c_ulong = 1 << (SECURE_NO_CAP_AMBIENT_RAISE as c_ulong);
+pub const SECBIT_NO_CAP_AMBIENT_RAISE_LOCKED: c_ulong = 1 << (SECURE_NO_CAP_AMBIENT_RAISE_LOCKED as c_ulong);
