@@ -2,13 +2,10 @@
 // Copyright © 2016 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-// linux - probably doesn't belong in this crate
-pub mod asm_generic;
-pub mod linux;
+use ::libc::c_char;
+use ::libc::c_int;
 
-// libc
-pub mod errno;
-pub mod net;
-pub mod netinet;
-pub mod sys;
-pub mod mntent;
+
+include!("__errno_location.rs");
+include!("program_invocation_short_name.rs");
+include!("program_invocation_name.rs");

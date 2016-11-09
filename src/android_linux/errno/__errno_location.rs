@@ -2,13 +2,8 @@
 // Copyright © 2016 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-// linux - probably doesn't belong in this crate
-pub mod asm_generic;
-pub mod linux;
-
-// libc
-pub mod errno;
-pub mod net;
-pub mod netinet;
-pub mod sys;
-pub mod mntent;
+extern "C"
+{
+	#[cfg(target_env = "musl")]
+	pub fn __errno_location() -> *mut c_int;
+}
