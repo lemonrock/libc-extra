@@ -4,8 +4,8 @@
 
 #![allow(non_camel_case_types)] 
 
-use ::core::default::Default;
-use ::core::mem::zeroed;
+use ::std::default::Default;
+use ::std::mem::zeroed;
 use ::libc::c_ushort;
 use ::libc::uint8_t;
 use ::libc::uint16_t;

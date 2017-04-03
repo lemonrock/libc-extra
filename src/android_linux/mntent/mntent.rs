@@ -15,6 +15,6 @@ impl Default for mntent
 {
 	fn default() -> Self
 	{
-		unsafe { ::core::mem::zeroed() }
+		unsafe { ::std::mem::zeroed() }
 	}
 }

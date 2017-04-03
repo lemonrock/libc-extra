@@ -2,7 +2,7 @@
 // Copyright © 2016 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-use ::core::mem::zeroed;
+use ::std::mem::zeroed;
 use ::libc::c_int;
 use ::libc::c_uchar;
 use ::libc::c_uint;

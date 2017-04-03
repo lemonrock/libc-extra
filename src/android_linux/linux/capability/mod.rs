@@ -4,8 +4,8 @@
 
 #![allow(non_camel_case_types)]
 
-use ::core::default::Default;
-use ::core::mem::zeroed;
+use ::std::default::Default;
+use ::std::mem::zeroed;
 use ::libc::c_int;
 use ::libc::c_longlong;
 use ::libc::c_uchar;

@@ -49,7 +49,7 @@ pub const TIOCCBRK: c_int = 0x5428;
 pub const TIOCGSID: c_int = 0x5429;
 
 // mips, mips64, powerpc and powerpc64 do not use the '2' versions so has no definition
-#[cfg(any(target_arch = "aarch64", target_arch = "arm", target_arch = "s390x", target_arch = "x86", target_arch = "x86_64"))] pub const TCGETS2: c_int = 0x802c542a;
+#[cfg(any(target_arch = "aarch64", target_arch = "arm", target_arch = "s390x", target_arch = "x86", target_arch = "x86_64"))] #[allow(overflowing_literals)] pub const TCGETS2: c_int = 0x802c542a;
 // #[cfg(target_arch = "sparc64")] pub const TCGETS2: c_int = 0x402c540c;
 
 // mips, mips64, powerpc and powerpc64 do not use the '2' versions so has no definition
@@ -95,17 +95,17 @@ cfg_if!
 	}
 }
 
-#[cfg(any(target_arch = "aarch64", target_arch = "arm", target_arch = "s390x", target_arch = "x86", target_arch = "x86_64"))] pub const TIOCGPTN: c_int = 0x80045430;
+#[cfg(any(target_arch = "aarch64", target_arch = "arm", target_arch = "s390x", target_arch = "x86", target_arch = "x86_64"))] #[allow(overflowing_literals)] pub const TIOCGPTN: c_int = 0x80045430;
 #[cfg(any(target_arch = "mips64", target_arch = "powerpc64"))] pub const TIOCGPTN: c_int = 0x40045430;
 // #[cfg(target_arch = "sparc64")] pub const TIOCGPTN: c_int = 0x40047486;
 // TODO: Probable but not certain: #[cfg(any(target_arch = "mips", target_arch = "powerpc"))] pub const TIOCGPTN: c_int = 0x40045430;
 
-#[cfg(any(target_arch = "aarch64", target_arch = "arm", target_arch = "s390x", target_arch = "x86", target_arch = "x86_64"))] pub const TIOCSPTLCK: c_int = 0x40045431;
+#[cfg(any(target_arch = "aarch64", target_arch = "arm", target_arch = "s390x", target_arch = "x86", target_arch = "x86_64"))] #[allow(overflowing_literals)] pub const TIOCSPTLCK: c_int = 0x40045431;
 #[cfg(any(target_arch = "mips64", target_arch = "powerpc64"))] pub const TIOCSPTLCK: c_int = 0x80045431;
 // #[cfg(target_arch = "sparc64")] pub const TIOCSPTLCK: c_int = 0x80045431;
 // TODO: Probable but not certain: #[cfg(any(target_arch = "mips", target_arch = "powerpc"))] pub const TIOCSPTLCK: c_int = 0x80045431;
 
-#[cfg(any(target_arch = "aarch64", target_arch = "arm", target_arch = "s390x", target_arch = "x86", target_arch = "x86_64"))] pub const TIOCGDEV: c_int = 0x80045432;
+#[cfg(any(target_arch = "aarch64", target_arch = "arm", target_arch = "s390x", target_arch = "x86", target_arch = "x86_64"))] #[allow(overflowing_literals)] pub const TIOCGDEV: c_int = 0x80045432;
 #[cfg(any(target_arch = "mips64", target_arch = "powerpc64"))] pub const TIOCGDEV: c_int = 0x40045432;
 // #[cfg(target_arch = "sparc64")] pub const TIOCGDEV: c_int = 0x40045432;
 // TODO: Probable but not certain: #[cfg(any(target_arch = "mips", target_arch = "powerpc"))] pub const TIOCGDEV: c_int = 0x40045432;
@@ -125,17 +125,17 @@ pub const TCSETXW: c_int = 0x5435;
 
 pub const TIOCVHANGUP: c_int = 0x5437;
 
-#[cfg(any(target_arch = "aarch64", target_arch = "arm", target_arch = "s390x", target_arch = "x86", target_arch = "x86_64"))] pub const TIOCGPKT: c_int = 0x80045438;
+#[cfg(any(target_arch = "aarch64", target_arch = "arm", target_arch = "s390x", target_arch = "x86", target_arch = "x86_64"))] #[allow(overflowing_literals)] pub const TIOCGPKT: c_int = 0x80045438;
 #[cfg(any(target_arch = "mips64", target_arch = "powerpc64"))] pub const TIOCGPKT: c_int = 0x40045438;
 // TODO: Probable but not certain: #[cfg(any(target_arch = "mips", target_arch = "powerpc"))] pub const TIOCGPKT: c_int = 0x40045438;
 // #[cfg(target_arch = "sparc64")] pub const TIOCGPKT: c_int = 0x40045438;
 
-#[cfg(any(target_arch = "aarch64", target_arch = "arm", target_arch = "s390x", target_arch = "x86", target_arch = "x86_64"))] pub const TIOCGPTLCK: c_int = 0x80045439;
+#[cfg(any(target_arch = "aarch64", target_arch = "arm", target_arch = "s390x", target_arch = "x86", target_arch = "x86_64"))] #[allow(overflowing_literals)] pub const TIOCGPTLCK: c_int = 0x80045439;
 #[cfg(any(target_arch = "mips64", target_arch = "powerpc64"))] pub const TIOCGPTLCK: c_int = 0x40045439;
 // TODO: Probable but not certain: #[cfg(any(target_arch = "mips", target_arch = "powerpc"))] pub const TIOCGPTLCK: c_int = 0x40045439;
 // #[cfg(target_arch = "sparc64")] pub const TIOCGPTLCK: c_int = 0x40045439;
 
-#[cfg(any(target_arch = "aarch64", target_arch = "arm", target_arch = "s390x", target_arch = "x86", target_arch = "x86_64"))] pub const TIOCGEXCL: c_int = 0x80045440;
+#[cfg(any(target_arch = "aarch64", target_arch = "arm", target_arch = "s390x", target_arch = "x86", target_arch = "x86_64"))] #[allow(overflowing_literals)] pub const TIOCGEXCL: c_int = 0x80045440;
 #[cfg(any(target_arch = "mips64", target_arch = "powerpc64"))] pub const TIOCGEXCL: c_int = 0x40045440;
 // TODO: Probable but not certain: #[cfg(any(target_arch = "mips", target_arch = "powerpc"))] pub const TIOCGEXCL: c_int = 0x40045440;
 // #[cfg(target_arch = "sparc64")] pub const TIOCGEXCL: c_int = 0x40045440;

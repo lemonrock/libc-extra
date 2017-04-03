@@ -4,9 +4,9 @@
 
 #![allow(non_camel_case_types)] 
 
-use ::core::default::Default;
-use ::core::mem::transmute;
-use ::core::mem::zeroed;
+use ::std::default::Default;
+use ::std::mem::transmute;
+use ::std::mem::zeroed;
 use ::libc::c_char;
 use ::libc::c_int;
 use ::libc::c_short;
