@@ -28,5 +28,5 @@ codegen-units = 1
 
 [dependencies]
 cfg-if = "^0.1"
-const-cstr = { git = "https://github.com/lemonrock/const-cstr.git" }
+const-cstr-fork = "^0.2"
 libc = "^0.2"
