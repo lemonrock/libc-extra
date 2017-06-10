@@ -2,15 +2,13 @@
 // Copyright © 2016 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-// linux - probably doesn't belong in this crate
-pub mod asm_generic;
-pub mod linux;
+use ::libc::c_char;
+use ::libc::size_t;
+use ::libc::FILE;
 
-// libc
-pub mod errno;
-pub mod net;
-pub mod mntent;
-pub mod netinet;
-pub mod sched;
-pub mod sys;
-pub mod stdio;
+
+#[link(name = "c")]
+extern "C"
+{
+	pub fn open_memstream(buffer: *mut *mut c_char, size: *mut size_t) -> *mut FILE;
+}
