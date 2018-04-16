@@ -10,10 +10,21 @@ extern crate libc;
 use ::libc::FILE;
 
 
+#[cfg(any(target_os = "android", target_os = "linux"))] pub mod android_linux;
+
+
+#[cfg(any(target_os = "android", target_os = "linux"))] pub use android_linux::*;
+
+
+#[cfg(target_os = "freebsd")] pub mod freebsd;
+
+
+#[cfg(target_os = "freebsd")] pub use freebsd::*;
+
+
+pub mod ffi;
+
+
 include!("stdin.rs");
 include!("stdout.rs");
 include!("stderr.rs");
-
-#[cfg(any(target_os = "android", target_os = "linux"))] pub mod android_linux;
-#[cfg(any(target_os = "android", target_os = "linux"))] pub use android_linux::*;
-pub mod ffi;
