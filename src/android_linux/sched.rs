@@ -9,6 +9,5 @@ use ::libc::c_int;
 extern
 {
 	/// This function has already been defined in the libc crate for glibc
-	#[cfg(target_env = "musl")]
 	pub fn sched_getcpu() -> c_int;
 }

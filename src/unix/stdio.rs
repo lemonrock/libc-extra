@@ -2,19 +2,20 @@
 // Copyright © 2016 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-#![allow(non_camel_case_types)]
-#![allow(non_upper_case_globals)] 
+#[cfg(not(any(target_os = "ios", target_os = "macos")))] use ::libc::c_char;
+use ::libc::FILE;
+#[cfg(not(any(target_os = "ios", target_os = "macos")))] use ::libc::size_t;
 
 
+#[link(name = "c")]
+extern "C"
+{
+	pub static stdin: *const FILE;
 
-#[cfg(any(target_os = "android", target_os = "linux"))] #[macro_use] extern crate cfg_if;
-#[cfg(unix)] extern crate const_cstr_fork;
-#[cfg(unix)] extern crate libc;
+	pub static stdout: *const FILE;
 
+	pub static stderr: *const FILE;
 
-/// Functionality for `#[cfg(any(target_os = "android", target_os = "linux"))]`.
-#[cfg(any(target_os = "android", target_os = "linux"))] pub mod android_linux;
-
-
-/// Functionality for `#[cfg(unix)]`.
-#[cfg(unix)] pub mod unix;
+	#[cfg(not(any(target_os = "ios", target_os = "macos")))]
+	pub fn open_memstream(buffer: *mut *mut c_char, size: *mut size_t) -> *mut FILE;
+}

@@ -4,8 +4,8 @@
 
 [package]
 name = "libc-extra"
-description = "libc-extra"
-keywords = ["libc-extra"]
+description = "Additional bits and bobs found in libc libraries that either hasn't been submitted to Rust's official libc crate yet, or has been rejected or requires too much work to integrate"
+keywords = ["libc"]
 categories = ["external-ffi-bindings"]
 license = "MIT"
 authors = ["Raphael Cohn <raphael.cohn@stormmq.com>"]
@@ -13,11 +13,11 @@ documentation = "https://github.com/lemonrock/libc-extra/blob/master/README.md"
 homepage = "https://github.com/lemonrock/libc-extra"
 repository = "https://github.com/lemonrock/libc-extra.git"
 exclude = ["*"]
-include = ["README.md", "LICENSE", "COPYRIGHT", "src/**/*.rs", "benches/**/*.rs", "examples/**/*.rs", "tests/**/*.rs", "Cargo.toml", "rustfmt.toml", "clippy.toml"]
+include = ["README.md", "LICENSE", "COPYRIGHT", "src/**/*.rs", "Cargo.toml", "rustfmt.toml", "clippy.toml"]
 # Relative to Cargo.toml
 readme = "README.md"
 publish = true
-version = "0.0.16"
+version = "0.1.0"
 
 [profile.release]
 opt-level = 3
