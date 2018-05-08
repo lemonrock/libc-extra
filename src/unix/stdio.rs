@@ -10,11 +10,11 @@ use ::libc::FILE;
 #[link(name = "c")]
 extern "C"
 {
-	pub static stdin: *const FILE;
+	pub static mut stdin: *const FILE;
 
-	pub static stdout: *const FILE;
+	pub static mut stdout: *const FILE;
 
-	pub static stderr: *const FILE;
+	pub static mut stderr: *const FILE;
 
 	#[cfg(not(any(target_os = "ios", target_os = "macos")))]
 	pub fn open_memstream(buffer: *mut *mut c_char, size: *mut size_t) -> *mut FILE;

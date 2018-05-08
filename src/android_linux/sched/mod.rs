@@ -2,8 +2,7 @@
 // Copyright © 2016-2018 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-use ::libc::c_char;
+use ::libc::c_int;
 
 
-include!("program_invocation_short_name.rs");
-include!("program_invocation_name.rs");
+include!("sched_getcpu.rs");

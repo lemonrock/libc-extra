@@ -4,6 +4,5 @@
 
 extern "C"
 {
-	#[cfg(target_os = "linux")]
 	pub static mut program_invocation_name: *mut c_char;
 }
