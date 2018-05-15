@@ -2,11 +2,13 @@
 // Copyright © 2016-2018 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-
-pub mod stdio;
-
-
-pub mod stdlib;
+#[cfg(not(any(target_os = "ios", target_os = "macos")))] use ::libc::c_void;
+#[cfg(not(any(target_os = "ios", target_os = "macos")))] use ::libc::size_t;
 
 
-pub mod unistd;
+#[link(name = "c")]
+extern "C"
+{
+	#[cfg(not(any(target_os = "ios", target_os = "macos")))]
+	pub fn aligned_alloc(alignment: size_t, size:  size_t) -> *mut c_void;
+}
