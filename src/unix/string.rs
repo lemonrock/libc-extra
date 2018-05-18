@@ -2,14 +2,12 @@
 // Copyright © 2016-2018 The developers of libc-extra. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/lemonrock/libc-extra/master/COPYRIGHT.
 
 
-
-pub mod stdio;
-
-
-pub mod stdlib;
+use ::libc::c_char;
+use ::libc::c_int;
 
 
-pub mod string;
-
-
-pub mod unistd;
+#[link(name = "c")]
+extern "C"
+{
+	pub fn strsignal(sig: c_int) -> *const c_char;
+}
