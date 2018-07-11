@@ -17,7 +17,7 @@ include = ["README.md", "LICENSE", "COPYRIGHT", "src/**/*.rs", "Cargo.toml", "ru
 # Relative to Cargo.toml
 readme = "README.md"
 publish = true
-version = "0.3.1"
+version = "0.3.2"
 
 [profile.release]
 opt-level = 3

@@ -10,4 +10,6 @@ use ::libc::gid_t;
 extern "C"
 {
 	pub fn setegid(egid: gid_t) -> c_int;
+	
+	pub fn getpagesize() -> c_int;
 }
